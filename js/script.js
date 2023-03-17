@@ -23,13 +23,41 @@ function play(e) {
             break;
     }
     let squarePerRow = Math.sqrt(squareNumber);
-    const bombs = generateBombs(nBombs, squareNumber)
+    const bombsArray = generateBombs(nBombs, squareNumber)
     for (let i = 1; i <= squareNumber; i++){
         const square = drawSquare(i, squarePerRow);
         square.addEventListener('click', function(){
-            square.classList.add('safe')
-            console.log(square)
+            square.classList.add('safe');
+            console.log(square);
         })
         playGround.appendChild(square);
     }
+
 }
+
+/* 
+const boxes = playGround.querySelectorAll('div')
+    for (let i = 1; i <= squareNumber; i++){
+        const square = drawSquare(i, squarePerRow);
+        if (bombsArray.indexOf(parseInt(boxes[i-1].textContent)) >= 0) {
+            square.addEventListener('click', function(){
+                square.classList.add('bomb');
+            })
+        }else{
+            square.addEventListener('click', function(){
+                square.classList.add('safe');
+            })
+        }
+        console.log(square);
+        playGround.appendChild(square);
+    }
+     */
+/* 
+    const boxes = playGround.querySelectorAll('div')
+    for (let i = 0; i < boxes.length; i++){
+        if (bombsArray.indexOf(parseInt(boxes[i].textContent)) >= 0) {
+            console.log(bombsArray.includes(boxes[i].textContent))
+            boxes[i].classList.add('bomb')
+        }
+    }
+     */

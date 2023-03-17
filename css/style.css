@@ -33,3 +33,7 @@ main{
     background-color: #16166D;
     color: white;
 }
+.square.bomb{
+    background-color: #d42727;
+    color: white;
+}

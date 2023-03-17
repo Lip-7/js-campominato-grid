@@ -48,7 +48,7 @@ function drawSquare(content, width){
 }
 function generateBombs(nBombs, squareNumber){
   const bombsArray = []
-  while (bombsArray.length <= nBombs){
+  while (bombsArray.length < nBombs){
       const bomb = randomNumber(squareNumber);
       if (!bombsArray.includes(bomb)) {
           bombsArray.push(bomb);
