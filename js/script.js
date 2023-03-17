@@ -32,7 +32,7 @@ function play(e) {
                 square.classList.add('bomb');
                 const squares = document.getElementById('playground').querySelectorAll('div');
                 for (let j = 0; j < squares.length; j++){
-                    squares[j].removeEventListener('click')
+                    squares[j].removeEventListener('click', function(){})
                 }
             })
         }else{
