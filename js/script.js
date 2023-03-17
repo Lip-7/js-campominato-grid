@@ -1,24 +1,7 @@
 document.getElementById('levelForm').addEventListener('submit', play)
 
 
-function drawSquare(content, width){
-    const square = document.createElement('div');
-    square.classList.add('square');
-    square.style.width = `calc(100% / ${width})`;
-    square.style.height = `calc(100% / ${width})`;
-    square.innerHTML = content;
-    return square;
-}
-function generateBombs(nBombs, squareNumber){
-    const bombsArray = []
-    while (bombsArray.length <= nBombs){
-        const bomb = randomNumber(squareNumber);
-        if (!bombsArray.includes(bomb)) {
-            bombsArray.push(bomb);
-        }
-    }
-    return bombsArray
-}
+
 
 function play(e) {
     e.preventDefault();
@@ -45,6 +28,7 @@ function play(e) {
         const square = drawSquare(i, squarePerRow);
         square.addEventListener('click', function(){
             square.classList.add('safe')
+            console.log(square)
         })
         playGround.appendChild(square);
     }
