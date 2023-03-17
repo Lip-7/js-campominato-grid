@@ -30,16 +30,14 @@ function play(e) {
         if (bombsArray.indexOf(i) >= 0) {
             square.addEventListener('click', function(){
                 square.classList.add('bomb');
-                const squares = document.getElementById('playground').querySelectorAll('div');
-                for (let j = 0; j < squares.length; j++){
-                    squares[j].removeEventListener('click', function(){})
-                }
             })
         }else{
             square.addEventListener('click', function(){
-                square.classList.add('safe');
-                userScore ++
-                document.querySelector('h3').innerHTML = `Your score is: ${userScore}`
+                if (!this.classList.contains('safe')){
+                    square.classList.add('safe');
+                    userScore ++
+                    document.querySelector('h3').innerHTML = `Your score is: ${userScore}`
+                }
             })
         }
         playGround.appendChild(square);
