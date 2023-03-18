@@ -65,3 +65,11 @@ function simulateClick(element) {
   element.dispatchEvent(event);
   element.dispatchEvent(new Event('removeClick'));
 }
+function clickAll (list) {
+  let alreadyClicked = ['bomb','safe']
+  for (let i = 0; i < list.length; i++) {
+      if (!alreadyClicked.includes(list[i].classList[1])) {
+          simulateClick(list[i])
+      }
+  }
+}

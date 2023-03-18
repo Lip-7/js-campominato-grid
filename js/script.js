@@ -28,14 +28,14 @@ function play(e) {
     for (let i = 1; i <= squareNumber; i++){
         const square = drawSquare(i, squarePerRow);
         if (bombsArray.indexOf(i) >= 0) {
-            square.addEventListener('click', function(){
+            square.addEventListener('click', () => {
                 square.classList.add('bomb');
                 const userResult = userScore;
                 clickAll(document.querySelectorAll('.square'))
                 document.querySelector('h3').innerHTML = `You have achieved a score of ${userResult}`
             })
         }else{
-            square.addEventListener('click', function(){
+            square.addEventListener('click', () => {
                 if (!this.classList.contains('safe')){
                     square.classList.add('safe');
                     if (!document.querySelector('.bomb')){
@@ -46,14 +46,5 @@ function play(e) {
             })
         }
         playGround.appendChild(square);
-    }
-}
-
-function clickAll (list) {
-    let alreadyClicked = ['bomb','safe']
-    for (let i = 0; i < list.length; i++) {
-        if (!alreadyClicked.includes(list[i].classList[1])) {
-            simulateClick(list[i])
-        }
     }
 }
