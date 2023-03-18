@@ -7,7 +7,7 @@ function play(e) {
     e.preventDefault();
     const playGround = document.getElementById('playground');
     playGround.innerHTML = '';
-    document.querySelector('h3').innerHTML = `Seleziona la difficoltà e premi play!`
+    document.querySelector('h3').innerHTML = `Select the difficulty and press Play!`
     const level = document.getElementById('level').value; /* easy = 100 ,medium = 81, hard = 49 */
     let squareNumber;
     const nBombs = 16;
