@@ -54,5 +54,14 @@ function generateBombs(nBombs, squareNumber){
           bombsArray.push(bomb);
       }
   }
-  return bombsArray
+  return bombsArray;
+}
+function simulateClick(element) {
+  const event = new MouseEvent('click', {
+    view: window,
+    bubbles: true,
+    cancelable: true
+  });
+  element.dispatchEvent(event);
+  element.dispatchEvent(new Event('removeClick'));
 }

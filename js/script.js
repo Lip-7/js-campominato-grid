@@ -30,16 +30,30 @@ function play(e) {
         if (bombsArray.indexOf(i) >= 0) {
             square.addEventListener('click', function(){
                 square.classList.add('bomb');
+                const userResult = userScore;
+                clickAll(document.querySelectorAll('.square'))
+                document.querySelector('h3').innerHTML = `You have achieved a score of ${userResult}`
             })
         }else{
             square.addEventListener('click', function(){
                 if (!this.classList.contains('safe')){
                     square.classList.add('safe');
-                    userScore ++
-                    document.querySelector('h3').innerHTML = `Your score is: ${userScore}`
+                    if (!document.querySelector('.bomb')){
+                        userScore ++
+                        document.querySelector('h3').innerHTML = `Your score is: ${userScore}`
+                    }
                 }
             })
         }
         playGround.appendChild(square);
+    }
+}
+
+function clickAll (list) {
+    let alreadyClicked = ['bomb','safe']
+    for (let i = 0; i < list.length; i++) {
+        if (!alreadyClicked.includes(list[i].classList[1])) {
+            simulateClick(list[i])
+        }
     }
 }
