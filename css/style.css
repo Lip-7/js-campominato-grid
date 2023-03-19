@@ -9,6 +9,7 @@
     --primary-color: #80FFDB;
     --success: #47B394;
     --orange: #FFBE73;
+    --violet: #6D68E8;
 }
 .wrapper{
     background-color: #7fffda;
@@ -39,7 +40,6 @@ main{
 }
 .square.safe{
     background-color: var(--success);
-    color: var(--violet);
 }
 .square.bomb{
     background-color: var(--red);
