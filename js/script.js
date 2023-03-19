@@ -40,6 +40,9 @@ function play(e) {
                     if (!document.querySelector('.bomb')){
                         userScore ++
                         document.querySelector('h3').innerHTML = `Your score is: ${userScore}`
+                        square.style.animation = 'boing 0.4s ease-in-out'
+                    }else{
+                        square.style.backgroundColor = 'var(--primary-color)'
                     }
                 }
             })

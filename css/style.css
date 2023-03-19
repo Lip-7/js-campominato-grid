@@ -3,6 +3,13 @@
     padding: 0;
     box-sizing: border-box;
 }
+:root{
+    --red: #FF9C80;
+    --dark-red: #B35136;
+    --primary-color: #80FFDB;
+    --success: #47B394;
+    --orange: #FFBE73;
+}
 .wrapper{
     background-color: #7fffda;
     height: 100vh;
@@ -11,6 +18,7 @@
 header,footer{
     background-color: white;
     height: 80px;
+    color: var(--success);
 }
 main{
     height: calc(100% - 160px);
@@ -30,20 +38,25 @@ main{
     cursor: pointer;
 }
 .square.safe{
-    background-color: #16166D;
-    color: white;
+    background-color: var(--success);
+    color: var(--violet);
 }
 .square.bomb{
-    background-color: #d42727;
+    background-color: var(--red);
     color: white;
     animation: blink 3s linear;
 }
 @keyframes blink {
-    0% { background-color: #d42727; }
-    15% { background-color: #ff5b5b; }
-    30% { background-color: #d42727; }
-    45% { background-color: #ff5b5b; }
-    60% { background-color: #d42727; }
-    75% { background-color: #ff5b5b; }
-    100% { background-color: #d42727; }
+    0% { background-color: var(--red); }
+    15% { background-color: var(--dark-red); }
+    30% { background-color: var(--red); }
+    45% { background-color: var(--dark-red); }
+    60% { background-color: var(--red); }
+    75% { background-color: var(--dark-red); }
+    100% { background-color: var(--red); }
+  }
+@keyframes boing {
+    0% {transform: scale(1);}
+    50% {transform: scale(1.2);}
+    100% {transform: scale(1);}
   }
