@@ -31,7 +31,7 @@ function play(e) {
                 square.classList.add('bomb');
                 const userResult = userScore;
                 clickAll(document.querySelectorAll('.square'));
-                document.querySelector('h3').innerHTML = `You have achieved a score of ${userResult}`
+                document.querySelector('h3').innerHTML = `You have achieved a score of ${userResult}`;
             })
         }else{
             square.addEventListener('click', () => {

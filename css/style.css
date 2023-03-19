@@ -37,13 +37,13 @@ main{
     justify-content: center;
     align-items: center;
     cursor: pointer;
+    color: transparent;
 }
 .square.safe{
     background-color: var(--success);
 }
 .square.bomb{
     background-color: var(--red);
-    color: white;
     animation: blink 3s linear;
 }
 @keyframes blink {
