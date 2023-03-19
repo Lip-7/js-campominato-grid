@@ -30,7 +30,8 @@ function play(e) {
                 if (!document.querySelector('.bomb')){bombAudio.play();}
                 square.classList.add('bomb');
                 const userResult = userScore;
-                clickAll(document.querySelectorAll('.square'));
+                const allSquares = document.querySelectorAll('.square')
+                clickAll(allSquares);
                 document.querySelector('h3').innerHTML = `You have achieved a score of ${userResult}`;
             })
         }else{
