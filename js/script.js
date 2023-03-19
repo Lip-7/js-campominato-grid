@@ -1,8 +1,5 @@
 document.getElementById('levelForm').addEventListener('submit', play)
 
-
-
-
 function play(e) {
     e.preventDefault();
     const playGround = document.getElementById('playground');
@@ -11,7 +8,8 @@ function play(e) {
     const level = document.getElementById('level').value; /* easy = 100 ,medium = 81, hard = 49 */
     let squareNumber;
     const nBombs = 16;
-    let userScore = 0
+    let userScore = 0;
+    const bombAudio = new Audio('../audio/b-lungo.mp3');
     switch(level){
         case 'easy':
             squareNumber = 100;
@@ -29,9 +27,10 @@ function play(e) {
         const square = drawSquare(i, squarePerRow);
         if (bombsArray.indexOf(i) >= 0) {
             square.addEventListener('click', () => {
+                if (!document.querySelector('.bomb')){bombAudio.play();}
                 square.classList.add('bomb');
                 const userResult = userScore;
-                clickAll(document.querySelectorAll('.square'))
+                clickAll(document.querySelectorAll('.square'));
                 document.querySelector('h3').innerHTML = `You have achieved a score of ${userResult}`
             })
         }else{

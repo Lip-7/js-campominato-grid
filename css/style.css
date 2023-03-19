@@ -36,4 +36,14 @@ main{
 .square.bomb{
     background-color: #d42727;
     color: white;
+    animation: blink 3s linear;
 }
+@keyframes blink {
+    0% { background-color: #d42727; }
+    15% { background-color: #ff5b5b; }
+    30% { background-color: #d42727; }
+    45% { background-color: #ff5b5b; }
+    60% { background-color: #d42727; }
+    75% { background-color: #ff5b5b; }
+    100% { background-color: #d42727; }
+  }
