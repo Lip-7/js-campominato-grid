@@ -47,13 +47,13 @@ main{
     animation: blink 3s linear;
 }
 @keyframes blink {
-    0% { background-color: var(--red); }
-    15% { background-color: var(--dark-red); }
-    30% { background-color: var(--red); }
-    45% { background-color: var(--dark-red); }
-    60% { background-color: var(--red); }
-    75% { background-color: var(--dark-red); }
-    100% { background-color: var(--red); }
+    0% {background-color: var(--red);}
+    15% {background-color: var(--dark-red);}
+    30% {background-color: var(--red);}
+    45% {background-color: var(--dark-red);}
+    60% {background-color: var(--red);}
+    75% {background-color: var(--dark-red);}
+    100% {background-color: var(--red);}
   }
 @keyframes boing {
     0% {transform: scale(1);}
