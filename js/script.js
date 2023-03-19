@@ -9,7 +9,7 @@ function play(e) {
     let squareNumber;
     const nBombs = 16;
     let userScore = 0;
-    const bombAudio = new Audio('../audio/bLungo.mp3');
+    const bombAudio = new Audio('./audio/bLungo.mp3');
     switch(level){
         case 'easy':
             squareNumber = 100;
